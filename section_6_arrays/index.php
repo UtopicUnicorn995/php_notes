@@ -27,7 +27,8 @@
 
     echo "<br>";
 
-    array_splice($fruits, 1, 1);
+    array_splice($fruits, 1, 1);// deleting a specific index and value of an array
+    //   array_splice($fruits, 1, 0, "Lyche"); -> Adding lyche before the index of 1 -> Has 0 count to be deleted
     var_dump($fruits);
 
     echo "<br>";
@@ -58,7 +59,17 @@
 
     echo "<br>";
 
-    print_r($fruits2)
+    print_r($fruits2);
+
+    $food = [
+        $fruits2,
+        array("Toys", "Weapon", "Cash"),
+        "Extra data"
+    ];// Multi dimension array
+
+    echo "<br>";
+
+    print_r($food);
 
 ?>
 </body>
