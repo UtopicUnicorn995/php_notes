@@ -16,6 +16,7 @@
         $GLOBALS["global_scope"]; // another way to gain access to a global variable
         $local_scope = "This is a local scoped variable"; // Cannot be accessed outside this function
         echo $local_scope; 
+        echo $gobal_scope;
     }
 
     function static_scope(){
