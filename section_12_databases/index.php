@@ -6,6 +6,8 @@
     <title>Website with database</title>
 </head>
 <body>
-    
+    <?php 
+        
+    ?>
 </body>
 </html>
