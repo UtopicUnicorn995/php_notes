@@ -6,8 +6,14 @@
     <title>Website with database</title>
 </head>
 <body>
-    <?php 
-        
-    ?>
+
+    <h3>Signup</h3>
+
+    <form action="includes/formhandler.inc.php" method="post">
+        <input type="text" name="username" placeholder="Username">
+        <input type="password" name="passwords" placeholder="Password">
+        <input type="text" name="email" placeholder="user@gmail.com">
+        <button>Signup</button>
+    </form>
 </body>
 </html>
