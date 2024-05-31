@@ -3,17 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Website with database</title>
+    <title>Searching data from database</title>
 </head>
 <body>
-
-    <h3>Signup</h3>
-
-    <form action="includes/formhandler.inc.php" method="post">
-        <input type="text" name="username" placeholder="Username">
-        <input type="password" name="passwords" placeholder="Password">
-        <input type="text" name="email" placeholder="user@gmail.com">
-        <button>Signup</button>
+    
+    <form action="includes/search.php" method="post">
+        <label for="search">Search for user:</label>
+        <input id="search" name="usersearch" placeholder="Search..." type="text">
+        <button>Search</button>
     </form>
 </body>
 </html>

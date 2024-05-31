@@ -18,8 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] == 'POST') {
         // (?, ?, ?);";
 
         //named query
-        $query = "INSERT INTO users (username, passwords, email) VALUES 
-        (:username, :pwd, :email);";
+        $query = "UPDATE users SET username = :username, passwords = :pwd, email = :email WHERE id = 6;";
 
         $stmt = $pdo->prepare($query);
 
@@ -42,7 +41,6 @@ if ($_SERVER["REQUEST_METHOD"] == 'POST') {
 
         // when there is a connection on it.
         die();
-
     } catch (PDOException $e) {
         // die() -> terminates the script
         die('Query failed: "' . $e->getMessage());

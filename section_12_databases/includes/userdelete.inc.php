@@ -18,14 +18,13 @@ if ($_SERVER["REQUEST_METHOD"] == 'POST') {
         // (?, ?, ?);";
 
         //named query
-        $query = "INSERT INTO users (username, passwords, email) VALUES 
-        (:username, :pwd, :email);";
+        $query = "DELETE from users WHERE username = :username AND passwords = :pwd;";
 
         $stmt = $pdo->prepare($query);
 
         $stmt->bindParam(':username', $username);
         $stmt->bindParam(':pwd', $pwd);
-        $stmt->bindParam(':email', $email);
+        // $stmt->bindParam(':email', $email);
 
         $stmt->execute();
 
@@ -42,7 +41,6 @@ if ($_SERVER["REQUEST_METHOD"] == 'POST') {
 
         // when there is a connection on it.
         die();
-
     } catch (PDOException $e) {
         // die() -> terminates the script
         die('Query failed: "' . $e->getMessage());
