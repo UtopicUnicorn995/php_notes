@@ -1,7 +1,7 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"] == 'POST') {
     $userSearch = $_POST["usersearch"];
-    var_dump($userSearch);
+
     try {
         require_once 'includes/dbh.inc.php';
         $query = "SELECT * FROM comments WHERE username = :usersearch;";
@@ -12,7 +12,7 @@ if ($_SERVER["REQUEST_METHOD"] == 'POST') {
 
         // using associative array is prefered and easier
         $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        
+
         $pdo = null;
         $stmt = null;
     } catch (PDOException $e) {
@@ -44,10 +44,7 @@ if ($_SERVER["REQUEST_METHOD"] == 'POST') {
     } else {
         echo "<ul>";
         foreach ($results as $result) {
-            echo htmlspecialchars($result['username']);
-            echo htmlspecialchars($result['comment_text']);
-            echo htmlspecialchars($result['create_at']);
-            echo "<li>{$result['username']}</li>";
+            echo "<li> Hello bitches, my username is " . htmlspecialchars($result['username']) . " and my comment is: " . htmlspecialchars($result['comment_text']) . "</li>";
         };
         echo "</ul>";
     }
