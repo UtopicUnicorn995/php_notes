@@ -8,6 +8,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     try {
         require_once 'dbh.inc.php';
+        require_once 'signup_model.inc.php';
+        // the sequence matters
+        require_once 'signup_contr.inc.php';
+
+        // ERROR HANDLERS
+        if(is_input_empty($username, $pwd, $email)){
+
+        }
+        if(is_email_empty( $email)){
+
+        }
+        if(is_username_taken($pdo, $username)){
+
+        }
+
     } catch (PDOException $e) {
         die('Query failed: ' . $e->getMessage());
     }
